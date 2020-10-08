@@ -26,9 +26,12 @@ $(document).ready(function () {
     $.ajax({
       method: "GET",
       url: searchUrl,
-      //   dataType: "jsonp",
-      success: function (data) {
-        console.log(data);
+      success: function (response) {
+        console.log(response);
+        return response;
+        var results = response.docs.headline.main;
+        console.log(results);
+        $("#result").text(results);
       },
     });
   });
